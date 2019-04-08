@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>VerifyTinyMCEKeywords</name>
+   <tag></tag>
+   <comment>Close browser</comment>
+   <testCaseGuid>1de9fe7b-0d99-416a-bbba-a61878ee2cdb</testCaseGuid>
+</TestCaseEntity>

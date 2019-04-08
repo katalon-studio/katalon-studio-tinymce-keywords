@@ -1,0 +1,200 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 34096 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=54456, tid=0x00000000000043dc
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_181-b13) (build 1.8.0_181-b13)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.181-b13 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000019ba3000):  JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=17372, stack(0x000000001a560000,0x000000001a660000)]
+
+Stack: [0x000000001a560000,0x000000001a660000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:    449  258 %     4       java.lang.String::replace @ 78 (127 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000019c25800 JavaThread "Service Thread" daemon [_thread_blocked, id=20224, stack(0x000000001a760000,0x000000001a860000)]
+  0x0000000019ba8000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=58892, stack(0x000000001a660000,0x000000001a760000)]
+=>0x0000000019ba3000 JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=17372, stack(0x000000001a560000,0x000000001a660000)]
+  0x0000000019b9d000 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=52376, stack(0x000000001a460000,0x000000001a560000)]
+  0x0000000019b99800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=58568, stack(0x000000001a360000,0x000000001a460000)]
+  0x0000000019b94000 JavaThread "Attach Listener" daemon [_thread_blocked, id=51620, stack(0x000000001a260000,0x000000001a360000)]
+  0x0000000019b93000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=57976, stack(0x000000001a160000,0x000000001a260000)]
+  0x0000000019b80800 JavaThread "Finalizer" daemon [_thread_blocked, id=26516, stack(0x000000001a060000,0x000000001a160000)]
+  0x0000000017d93800 JavaThread "Reference Handler" daemon [_thread_blocked, id=57236, stack(0x0000000019f60000,0x000000001a060000)]
+  0x000000000348e000 JavaThread "main" [_thread_in_native, id=59116, stack(0x0000000003310000,0x0000000003410000)]
+
+Other Threads:
+  0x0000000017d8a800 VMThread [stack: 0x0000000019a60000,0x0000000019b60000] [id=12028]
+  0x0000000019c51000 WatcherThread [stack: 0x000000001a860000,0x000000001a960000] [id=58344]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 75264K, used 12792K [0x00000000da180000, 0x00000000df580000, 0x0000000100000000)
+  eden space 64512K, 19% used [0x00000000da180000,0x00000000dadfe070,0x00000000de080000)
+  from space 10752K, 0% used [0x00000000deb00000,0x00000000deb00000,0x00000000df580000)
+  to   space 10752K, 0% used [0x00000000de080000,0x00000000de080000,0x00000000deb00000)
+ ParOldGen       total 172032K, used 0K [0x000000008e400000, 0x0000000098c00000, 0x00000000da180000)
+  object space 172032K, 0% used [0x000000008e400000,0x000000008e400000,0x0000000098c00000)
+ Metaspace       used 3248K, capacity 4564K, committed 4864K, reserved 1056768K
+  class space    used 335K, capacity 388K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x0000000012940000,0x0000000012cd0000] byte_map_base: 0x00000000124ce000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000057872d00
+ Begin Bits: [0x0000000013730000, 0x00000000153a0000)
+ End Bits:   [0x00000000153a0000, 0x0000000017010000)
+
+Polling page: 0x0000000001280000
+
+CodeCache: size=245760Kb used=1725Kb max_used=1725Kb free=244034Kb
+ bounds [0x0000000003580000, 0x00000000037f0000, 0x0000000012580000]
+ total_blobs=511 nmethods=269 adapters=154
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.443 Thread 0x0000000019ba8000  256       3       java.io.File::hashCode (8 bytes)
+Event: 0.443 Thread 0x0000000019ba8000 nmethod 256 0x000000000372a1d0 code [0x000000000372a360, 0x000000000372a6d8]
+Event: 0.443 Thread 0x0000000019ba8000  257       3       java.io.WinNTFileSystem::hashCode (17 bytes)
+Event: 0.443 Thread 0x0000000019ba8000 nmethod 257 0x000000000372a850 code [0x000000000372a9c0, 0x000000000372acd8]
+Event: 0.443 Thread 0x0000000019ba3000  258 %     4       java.lang.String::replace @ 78 (127 bytes)
+Event: 0.444 Thread 0x0000000019ba8000  259       3       sun.misc.URLClassPath$3::run (5 bytes)
+Event: 0.444 Thread 0x0000000019ba8000 nmethod 259 0x000000000372ae10 code [0x000000000372af80, 0x000000000372b128]
+Event: 0.444 Thread 0x0000000019ba8000  260       3       sun.misc.URLClassPath$3::run (93 bytes)
+Event: 0.444 Thread 0x0000000019ba8000 nmethod 260 0x000000000372b1d0 code [0x000000000372b3a0, 0x000000000372bc58]
+Event: 0.445 Thread 0x0000000019ba8000  261       3       java.util.AbstractMap::<init> (5 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (2 events):
+Event: 0.381 Thread 0x000000000348e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003682e24 method=java.lang.String.hashCode()I @ 14
+Event: 0.407 Thread 0x000000000348e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003719184 method=java.lang.String.regionMatches(ZILjava/lang/String;II)Z @ 41
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.171 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000da53e640) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.171 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000da53e850) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.252 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000da9133c8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.252 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000da9135d8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.439 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dacf10b8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.439 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dacf12c8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.439 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dacf2410) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.439 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dacf2620) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.439 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dacf37a0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.439 Thread 0x000000000348e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000dacf39b0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+
+Events (10 events):
+Event: 0.406 loading class sun/nio/cs/ThreadLocalCoders done
+Event: 0.406 loading class sun/nio/cs/ThreadLocalCoders$1
+Event: 0.406 loading class sun/nio/cs/ThreadLocalCoders$Cache
+Event: 0.406 loading class sun/nio/cs/ThreadLocalCoders$Cache done
+Event: 0.406 loading class sun/nio/cs/ThreadLocalCoders$1 done
+Event: 0.406 loading class sun/nio/cs/ThreadLocalCoders$2
+Event: 0.406 loading class sun/nio/cs/ThreadLocalCoders$2 done
+Event: 0.407 Thread 0x000000000348e000 Uncommon trap: trap_request=0xffffff65 fr.pc=0x0000000003719184
+Event: 0.407 Thread 0x000000000348e000 DEOPT PACKING pc=0x0000000003719184 sp=0x000000000340e2b0
+Event: 0.407 Thread 0x000000000348e000 DEOPT UNPACKING pc=0x00000000035c583b sp=0x000000000340e238 mode 2
+
+
+Dynamic libraries:
+0x00007ff6a04e0000 - 0x00007ff6a0517000 	D:\Software\Katalon_Studio_Windows_64\jre\bin\javaw.exe
+0x00007ffdc29a0000 - 0x00007ffdc2b81000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffdc0290000 - 0x00007ffdc0342000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffdbfb50000 - 0x00007ffdbfdc3000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffdc1940000 - 0x00007ffdc19e1000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffdc28d0000 - 0x00007ffdc296e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffdc18e0000 - 0x00007ffdc193b000 	C:\Windows\System32\sechost.dll
+0x00007ffdc1d30000 - 0x00007ffdc1e54000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffdc00f0000 - 0x00007ffdc0280000 	C:\Windows\System32\USER32.dll
+0x00007ffdbf600000 - 0x00007ffdbf620000 	C:\Windows\System32\win32u.dll
+0x00007ffdc1b80000 - 0x00007ffdc1ba8000 	C:\Windows\System32\GDI32.dll
+0x00007ffdbf620000 - 0x00007ffdbf7b2000 	C:\Windows\System32\gdi32full.dll
+0x00007ffdbf8c0000 - 0x00007ffdbf95f000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffdbf7c0000 - 0x00007ffdbf8ba000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffdadc00000 - 0x00007ffdade69000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.376_none_fb439a3730647da2\COMCTL32.dll
+0x00007ffdc1e70000 - 0x00007ffdc2193000 	C:\Windows\System32\combase.dll
+0x00007ffdbee20000 - 0x00007ffdbee9a000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffdc2840000 - 0x00007ffdc286d000 	C:\Windows\System32\IMM32.DLL
+0x00007ffdb0f90000 - 0x00007ffdb1013000 	C:\Windows\SYSTEM32\dlphook.x64.dll
+0x00007ffdbfe30000 - 0x00007ffdbfe38000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffdc0350000 - 0x00007ffdc178f000 	C:\Windows\System32\SHELL32.dll
+0x00007ffdbeea0000 - 0x00007ffdbeee9000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffdbfe40000 - 0x00007ffdbfee9000 	C:\Windows\System32\shcore.dll
+0x00007ffdbeef0000 - 0x00007ffdbf5fd000 	C:\Windows\System32\windows.storage.dll
+0x00007ffdc2870000 - 0x00007ffdc28c1000 	C:\Windows\System32\shlwapi.dll
+0x00007ffdb1e70000 - 0x00007ffdb1e7a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffdbed50000 - 0x00007ffdbed61000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffdbed10000 - 0x00007ffdbed2f000 	C:\Windows\System32\profapi.dll
+0x00007ffdbecb0000 - 0x00007ffdbecfc000 	C:\Windows\System32\powrprof.dll
+0x00007ffdbed00000 - 0x00007ffdbed0a000 	C:\Windows\System32\FLTLIB.DLL
+0x00007ffdc26e0000 - 0x00007ffdc2831000 	C:\Windows\System32\ole32.dll
+0x00007ffdc19f0000 - 0x00007ffdc1a5c000 	C:\Windows\System32\WS2_32.dll
+0x00000000557e0000 - 0x00000000558b2000 	D:\Software\Katalon_Studio_Windows_64\jre\bin\msvcr100.dll
+0x0000000057050000 - 0x00000000578f2000 	D:\Software\Katalon_Studio_Windows_64\jre\bin\server\jvm.dll
+0x00007ffdbcfb0000 - 0x00007ffdbcfd3000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffdb1680000 - 0x00007ffdb1689000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffdbcf80000 - 0x00007ffdbcfaa000 	C:\Windows\SYSTEM32\winmmbase.dll
+0x0000000056f60000 - 0x0000000056f6f000 	D:\Software\Katalon_Studio_Windows_64\jre\bin\verify.dll
+0x0000000056f30000 - 0x0000000056f59000 	D:\Software\Katalon_Studio_Windows_64\jre\bin\java.dll
+0x0000000056f10000 - 0x0000000056f26000 	D:\Software\Katalon_Studio_Windows_64\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dgroovy.home=/D:/Software/Katalon_Studio_Windows_64/plugins/org.codehaus.groovy_2.4.7.xx-201611170128-e46/ -Xmx1820m -Dfile.encoding=UTF-8 
+java_command: org.codehaus.groovy.tools.GroovyStarter --classpath D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Include\scripts\groovy;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Keywords;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Libs;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Test Listeners;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\ant-1.9.4.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\ant-launcher-1.9.4.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\aopalliance-repackaged-2.4.0-b09.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\asm-5.0.3.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\cglib-3.2.1.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\cglib-nodep-2.1_3.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\commons-beanutils-1.9.2.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\commons-codec-1.10.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\commons-collections-3.2.2.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\commons-digester-1.8.1.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\commons-exec-1.3.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\commons-io-2.4.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\commons-lang3-3.4.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\commons-logging-1.2.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\commons-validator-1.5.0.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\cucumber-core-1.2.2.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\cucumber-html-0.2.3.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\cucumber-java-1.2.2.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\cucumber-jvm-deps-1.0.3.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\eyes-common-java3-3.2.jar;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\Drivers\eyes-connecti
+java_class_path (initial): D:\Applitools_GIT\GIT\Applitools_plugin\keywords\bin\keyword;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\bin\listener;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\bin\lib;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\bin\groovy;D:\Applitools_GIT\GIT\Applitools_plugin\keywords\bin;D:\Software\Katalon_Studio_Windows_64\plugins\com.kms.katalon.core_1.0.0.201903010637.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\bcpkix-jdk15on-1.58.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\bcprov-jdk15on-1.58.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\browsermob-core-2.1.5.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\dnsjava-2.1.8.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\java-client-5.0.4.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\jna-4.1.0.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\jna-platform-4.1.0.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\jzlib-1.1.3.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\kat-server.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\littleproxy-1.1.0-beta-bmp-17.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\mitm-2.1.5.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\netty-all-4.0.51.Final.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\repackaged-guava-19.0.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\repackaged-sikuli-api-1.0.2-standalone.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\selenium-leg-rc-3.7.0.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\selenium-server-standalone-3.7.1.jar;D:\Software\Katalon_Studio_Windows_64\configuration\resources\lib\testng-6.11.jar;D:\Software\Katalon_Studio_Windows_64\plugins\net.sf.supercs
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_191
+PATH=D:/Software/Katalon_Studio_Windows_64/jre/bin/server;D:/Software/Katalon_Studio_Windows_64/jre/bin;D:/Software/Katalon_Studio_Windows_64/jre/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_191\bin\;D:\apache-maven-3.6.0-bin\apache-maven-3.6.0\bin\;C:\Gradle\gradle-5.3\bin;C:\Users\trunglu\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.2\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2018.3.2\bin;;D:\Software\Katalon_Studio_Windows_64;
+USERNAME=trunglu
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17134 (10.0.17134.1)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16442964k(3056900k free), swap 31596240k(4096k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.181-b13) for windows-amd64 JRE (1.8.0_181-b13), built on Jul  7 2018 04:01:33 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Mar 26 14:16:06 2019
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
