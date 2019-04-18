@@ -23,15 +23,15 @@ import internal.GlobalVariable as GlobalVariable
 WebUI.openBrowser("https://www.tiny.cloud/")
 
 //setText
-CustomKeywords.'com.kms.katalon.keyword.tinymce.TinyMCEKeywords.setText'(findTestObject('Object Repository/Page_tinyMCEDemo/iframe'),findTestObject('Object Repository/Page_tinyMCEDemo/body') , "text1")
+CustomKeywords.'com.kms.katalon.keyword.tinymce.TinyMCEKeywords.setText'(findTestObject('Object Repository/Page_tinyMCEDemo/iframe') , "text1")
 
 //sendkeys
-CustomKeywords.'com.kms.katalon.keyword.tinymce.TinyMCEKeywords.sendKeys'(findTestObject('Object Repository/Page_tinyMCEDemo/iframe'),findTestObject('Object Repository/Page_tinyMCEDemo/body') , "text3")
+CustomKeywords.'com.kms.katalon.keyword.tinymce.TinyMCEKeywords.sendKeys'(findTestObject('Object Repository/Page_tinyMCEDemo/iframe') , "text3")
 
 //select all
-CustomKeywords.'com.kms.katalon.keyword.tinymce.TinyMCEKeywords.selectAll'(findTestObject('Object Repository/Page_tinyMCEDemo/iframe'), findTestObject('Object Repository/Page_tinyMCEDemo/body'))
+CustomKeywords.'com.kms.katalon.keyword.tinymce.TinyMCEKeywords.selectAll'(findTestObject('Object Repository/Page_tinyMCEDemo/iframe'))
 WebUI.click(findTestObject('Object Repository/Page_tinyMCEDemo/Align_Center'))
 WebUI.click(findTestObject('Object Repository/Page_tinyMCEDemo/Align left'))
 
 //clear all
-CustomKeywords.'com.kms.katalon.keyword.tinymce.TinyMCEKeywords.clearAll'(findTestObject('Object Repository/Page_tinyMCEDemo/iframe'),findTestObject('Object Repository/Page_tinyMCEDemo/body') )
+CustomKeywords.'com.kms.katalon.keyword.tinymce.TinyMCEKeywords.clearAll'(findTestObject('Object Repository/Page_tinyMCEDemo/iframe'))

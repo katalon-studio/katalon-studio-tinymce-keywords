@@ -15,7 +15,7 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import groovy.transform.CompileStatic
 
 public class TinyMCEKeywords {
-	static WebDriver driver = DriverFactory.getWebDriver()
+	static int TIMEOUT = 60
 
 	/**
 	 * Set the content of entire input area. It will replaces editor data by the new text.
@@ -26,12 +26,15 @@ public class TinyMCEKeywords {
 	 */
 	@CompileStatic
 	@Keyword
-	static void setText(TestObject iFrame, TestObject body, String text) throws IOException {
-		WebUI.switchToFrame(iFrame, 60)
-		WebUI.setText(body, text)
+	static void setText(TestObject iFrame, String text) throws IOException {
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebUI.switchToFrame(iFrame, TIMEOUT)
+		WebElement body = driver.findElement(By.tagName("body"))
+		body.clear()
+		body.sendKeys(text)
 		driver.switchTo().defaultContent()
 	}
-
+	
 	/**
 	 * Set the content to input area. It keeps the existing editor data.
 	 *
@@ -41,9 +44,11 @@ public class TinyMCEKeywords {
 	 */
 	@CompileStatic
 	@Keyword
-	static void sendKeys(TestObject iFrame, TestObject body, String text) throws IOException {
-		WebUI.switchToFrame(iFrame, 60)
-		WebUI.sendKeys(body, text)
+	static void sendKeys(TestObject iFrame, String text) throws IOException {
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebUI.switchToFrame(iFrame, TIMEOUT)
+		WebElement body = driver.findElement(By.tagName("body"))
+		body.sendKeys(text)
 		driver.switchTo().defaultContent()
 	}
 
@@ -55,9 +60,11 @@ public class TinyMCEKeywords {
 	 */
 	@CompileStatic
 	@Keyword
-	static void clearAll(TestObject iFrame, TestObject body) throws IOException {
-		WebUI.switchToFrame(iFrame, 60)
-		WebUI.clearText(body)
+	static void clearAll(TestObject iFrame) throws IOException {
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebUI.switchToFrame(iFrame, TIMEOUT)
+		WebElement body = driver.findElement(By.tagName("body"))
+		body.clear()
 		driver.switchTo().defaultContent()
 	}
 
@@ -69,11 +76,12 @@ public class TinyMCEKeywords {
 	 */
 	@CompileStatic
 	@Keyword
-	static void selectAll(TestObject iFrame, TestObject body) throws IOException {
-		WebUI.switchToFrame(iFrame, 0)
-		WebElement element = WebUiCommonHelper.findWebElement(body, 60)
+	static void selectAll(TestObject iFrame) throws IOException {
+		WebDriver driver = DriverFactory.getWebDriver()
+		WebUI.switchToFrame(iFrame, TIMEOUT)
+		WebElement body = driver.findElement(By.tagName("body"))
 		Actions actions = new Actions(driver)
-		actions.click(element).keyDown(Keys.LEFT_CONTROL).sendKeys("a").keyUp(Keys.LEFT_CONTROL).perform()
+		actions.click(body).keyDown(Keys.LEFT_CONTROL).sendKeys("a").keyUp(Keys.LEFT_CONTROL).perform()
 		driver.switchTo().defaultContent()
 	}
 }

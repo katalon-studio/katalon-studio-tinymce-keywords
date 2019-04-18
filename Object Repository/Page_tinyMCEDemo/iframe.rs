@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//iframe[@id='tiny-react_52799342731554253963465_ifr']</value>
+         <value>//iframe[contains(@class,'iframe')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -66,6 +66,6 @@
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
       <type>Main</type>
-      <value>//iframe[@id='tiny-react_52799342731554253963465_ifr']</value>
+      <value>//iframe[contains(@class,'iframe')]</value>
    </webElementXpaths>
 </WebElementEntity>
