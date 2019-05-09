@@ -20,8 +20,8 @@ public class TinyMCEKeywords {
 	/**
 	 * Set the content of entire input area. It will replaces editor data by the new text.
 	 *
-	 * @param iFrame The <iframe> object that contains the text editor body.
-	 * @param body The <body> object that needs to set text.
+	 * @param iFrame The iframe object that contains the text editor body.
+	 * @param body The body object that needs to set text.
 	 * @param text The text needs to set.
 	 */
 	@CompileStatic
@@ -34,12 +34,12 @@ public class TinyMCEKeywords {
 		body.sendKeys(text)
 		driver.switchTo().defaultContent()
 	}
-	
+
 	/**
 	 * Set the content to input area. It keeps the existing editor data.
 	 *
-	 * @param iFrame The <iframe> object that contains the text editor body.
-	 * @param body The <body> object that needs to set text.
+	 * @param iFrame The iframe object that contains the text editor body.
+	 * @param body The body object that needs to set text.
 	 * @param text The text needs to set.
 	 */
 	@CompileStatic
@@ -55,8 +55,8 @@ public class TinyMCEKeywords {
 	/**
 	 * Clear all the content of the text editor.
 	 *
-	 * @param iFrame The <iframe> object that contains the text editor body.
-	 * @param body The <body> object that needs to clear text.
+	 * @param iFrame The iframe object that contains the text editor body.
+	 * @param body The body object that needs to clear text.
 	 */
 	@CompileStatic
 	@Keyword
@@ -71,8 +71,8 @@ public class TinyMCEKeywords {
 	/**
 	 * Select all the content of the text editor.
 	 *
-	 * @param iFrame The <iframe> object that contains the text editor body.
-	 * @param body The <body> object that needs to select the text.
+	 * @param iFrame The iframe object that contains the text editor body.
+	 * @param body The body object that needs to select the text.
 	 */
 	@CompileStatic
 	@Keyword
